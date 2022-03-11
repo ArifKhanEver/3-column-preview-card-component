@@ -1,0 +1,107 @@
+$brightOrange: hsl(31, 77%, 52%);
+$darkCyan: hsl(184, 100%, 22%);
+$veryDarkCyan: hsl(179, 100%, 13%);
+$transparent: hsla(0, 0%, 100%, 0.75);
+$veryLightGray: hsl(0, 0%, 95%);
+$bigShoulders: 'Big Shoulders Display', cursive;
+$deca: 'Lexend Deca', sans-serif;
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+h1, h2, p, body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    @media (min-width: 950px) {
+        display: flex;
+    }
+}
+
+body {
+    font-size: 15px;
+    background-color: $veryLightGray;
+
+    main {
+        border-radius: 7px;
+        overflow: hidden;
+        width: 330px;
+        margin : 88px auto;
+        @media (min-width: 950px) {
+            width: 920px;
+            height: 500px;
+            margin: 170px auto;
+        }
+
+        .column {
+            padding: 48px;
+            @media (max-width: 950px) {
+                width: 328px;
+            }
+            h1 {
+                margin: 35px 0 26px;
+                color: $veryLightGray;
+                font-family: $bigShoulders;
+                text-transform: uppercase;
+                font-size: 38px;
+            }
+            p {
+                font-family: $deca;
+                color: $transparent;
+                line-height: 1.7;
+                margin-bottom: 80px;
+                @media (max-width: 950px) {
+                    margin-bottom: 30px;
+                }
+            }
+            .link {
+                width: 145px;
+                height: 50px;
+                border-radius: 25px;
+                background-color: $veryLightGray;
+                transition: .3s;
+                &:hover {
+                    background-color: transparent;
+                    border: 1px solid $veryLightGray;
+                    a {
+                        color: $veryLightGray;
+                    }
+                }
+                a {
+                    display: block;
+                    text-align: center;
+                    text-decoration: none;
+                    font-family: $deca;
+                    padding-block: 16px;                    
+                }
+            }
+        }
+
+        .column-1 {
+            background: $brightOrange;
+            min-width: 308px;
+            a {
+                color: $brightOrange;
+            }
+        }
+        .column-2 {
+            background-color: $darkCyan;
+            a {
+                color: $darkCyan;
+            }
+        }
+        .column-3 {
+            background-color: $veryDarkCyan;
+            a {
+                color: $veryDarkCyan;
+            }
+        }
+    }
+}
